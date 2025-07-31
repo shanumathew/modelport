@@ -28,7 +28,7 @@ export default function Home() {
   useEffect(() => {
     const gallery = galleryRef.current;
     if (!gallery) return;
-    let scrollAmount = 1.2; // px per frame
+    const scrollAmount = 1.2; // px per frame
     let req: number;
     const scrollStep = () => {
       if (!isHovered) {
@@ -67,7 +67,7 @@ export default function Home() {
     const imagesPerSet = portfolioImages.slice(2).length;
     const middleSet = 1;
     // Find the current index in the set
-    let idxInSet = centerIdx % imagesPerSet;
+    const idxInSet = centerIdx % imagesPerSet;
     let newIdxInSet = dir === 'left' ? idxInSet - 1 : idxInSet + 1;
     if (newIdxInSet < 0) newIdxInSet = imagesPerSet - 1;
     if (newIdxInSet >= imagesPerSet) newIdxInSet = 0;
@@ -116,15 +116,6 @@ export default function Home() {
               priority
             />
           </div>
-          <div className="absolute top-2 right-2 sm:top-[-20px] sm:right-[-20px] md:top-12 md:right-12 w-[100px] h-[140px] sm:w-[160px] sm:h-[200px] md:w-[260px] md:h-[340px] rounded-lg shadow-md overflow-hidden border-4 border-black z-20 transition-all duration-300">
-            <Image
-              src={portfolioImages[1]}
-              alt="Portfolio Hero 2"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
         </main>
       </div>
 
@@ -133,7 +124,7 @@ export default function Home() {
         {/* Top Navigation Arrows and Title */}
         <div className="w-full max-w-7xl flex flex-row justify-between items-center px-1 sm:px-2 md:px-14">
           <h2 className="text-center text-2xl md:text-4xl font-serif font-light tracking-wider w-full" style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>
-            HI, I'M LISNA SHAJI
+            HI, I&apos;M LISNA SHAJI
           </h2>
         </div>
         {/* Subtitle */}
@@ -210,7 +201,7 @@ export default function Home() {
         {/* Left: White Card with Title/Text */}
         <div className="w-full md:w-1/2 max-w-xl bg-white rounded-lg shadow-xl p-4 sm:p-8 md:p-12 flex flex-col items-start">
           <h2 className="text-2xl md:text-3xl font-serif mb-6 text-black">
-            I'M LISNA, FASHION<br />
+            I&apos;M LISNA, FASHION<br />
             AND EDITORIAL MODEL
           </h2>
           <p className="text-sm md:text-base text-gray-800 mb-8 leading-relaxed">
@@ -267,7 +258,7 @@ export default function Home() {
             {/* Model Info Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs sm:text-sm text-gray-200">
               <div><span className="font-semibold text-white">Location:</span> Kerala, India</div>
-              <div><span className="font-semibold text-white">Height:</span> 4'11" (150 cm)</div>
+              <div><span className="font-semibold text-white">Height:</span> 4&apos;11&quot; (150 cm)</div>
               <div><span className="font-semibold text-white">Measurements:</span> 30-26-30 in (76-66-76 cm)</div>
               <div><span className="font-semibold text-white">Shoe Size:</span> EU 35 / UK 3 / US 4</div>
               <div><span className="font-semibold text-white">Hair Color:</span> Black</div>
