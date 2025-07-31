@@ -94,7 +94,7 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl font-serif font-light leading-tight mb-8 text-center md:text-left" style={{ fontFamily: 'Playfair Display, Georgia, serif', letterSpacing: '0.04em' }}>
               LISNA<br/>SHAJI
             </h1>
-            <a href="#portfolio" className="mt-2 flex items-center gap-2 text-base md:text-lg group font-sans border-b border-white pb-1 hover:opacity-80 transition-all">
+            <a href="#hi-im-lisna" className="mt-2 flex items-center gap-2 text-base md:text-lg group font-sans border-b border-white pb-1 hover:opacity-80 transition-all">
               <span>View My Portfolio</span>
               <span className="transition-transform group-hover:translate-x-2 text-xl md:text-2xl">→</span>
             </a>
@@ -104,7 +104,7 @@ export default function Home() {
         <main className="md:w-[60vw] w-full flex flex-col items-center justify-center bg-black relative p-0 min-h-[400px] md:min-h-[800px]">
           <div className="relative w-[220px] h-[300px] sm:w-[320px] sm:h-[420px] md:w-[480px] md:h-[650px] mt-8 md:mt-0 rounded-lg shadow-lg overflow-hidden z-10 transition-all duration-300">
             <Image
-              src={portfolioImages[0]}
+              src="/portfolio/ramp4.webp"
               alt="Portfolio Hero 1"
               fill
               className="object-cover"
@@ -115,7 +115,7 @@ export default function Home() {
       </div>
 
       {/* BOTTOM: Portfolio Gallery Section (from your screenshot) */}
-      <section className="w-full bg-black mt-10 sm:mt-16 md:mt-20 flex flex-col items-center px-1 sm:px-2">
+      <section id="hi-im-lisna" className="w-full bg-black mt-10 sm:mt-16 md:mt-20 flex flex-col items-center px-1 sm:px-2">
         {/* Top Navigation Arrows and Title */}
         <div className="w-full max-w-7xl flex flex-row justify-between items-center px-1 sm:px-2 md:px-14">
           <h2 className="text-center text-2xl md:text-4xl font-serif font-light tracking-wider w-full" style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>
@@ -204,17 +204,18 @@ export default function Home() {
             Location: Kerala, India<br/>
             Languages: English, Malayalam<br/>
             <br/>
-            Active in aesthetic and fashion shoots.<br/>
-            Versatile in traditional and Y2K styling.<br/>
-            Posing, styling, and creative shoot experience.<br/>
-            Comfortable with photo and video content.<br/>
-            Walks, expressions, and styling confidence.<br/>
+            From the grace of traditional fusion to the fierce flair of Y2K and streetwear, my modeling journey is a canvas of contrasts, confidence, and creativity.<br/>
+            <br/>
+            <strong>Winner of WMFO (Bridal Competition)</strong> and <strong>crowned Best Eye Makeup Title Holder</strong>, I don&apos;t just wear the look — I own it. Every shoot is a vibe, every frame tells a story — blending culture, edge, and pure aesthetic energy.<br/>
+            <br/>
+            With experience across fashion shoots, editorials, and creative content, I bring poses that speak, styles that slay, and an energy that turns heads — both in photos and videos. Whether it&apos;s traditional glam or a streetwear rebellion, I bring it with flair.<br/>
+            Let&apos;s shoot something legendary. 🎥💥
           </p>
           <a href="#bio" className="text-xs text-black underline hover:text-gray-400">Read About My Story &gt;&gt;</a>
         </div>
         {/* Right: Poolside Photo */}
         <div className="w-full md:w-1/2 flex justify-center items-center mt-6 sm:mt-8 md:mt-0">
-        <div className="relative w-[180px] h-[240px] sm:w-[320px] sm:h-[420px] md:w-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg transition-all duration-300">
+        <div className="relative w-[500px] h-[710px] rounded-lg overflow-hidden shadow-lg transition-all duration-300">
           <Image
             src={portfolioImages[7]}
             alt="Poolside Fashion"
@@ -260,6 +261,8 @@ export default function Home() {
               <div><span className="font-semibold text-white">Eye Color:</span> Brown</div>
               <div><span className="font-semibold text-white">Skin Tone:</span> Medium</div>
               <div><span className="font-semibold text-white">Body Type:</span> petite (hourglass)</div>
+              <div><span className="font-semibold text-white">Weight:</span> 38 kg</div>
+
               <div className="sm:col-span-2"><span className="font-semibold text-white">Languages:</span> English, Malayalam</div>
             </div>
           </div>
@@ -281,26 +284,53 @@ export default function Home() {
           </div>
           {/* Right: Portfolio Button and Navigation Arrows */}
           <div className="flex items-center gap-2 sm:gap-4">
-            <button className="bg-[#c4b896] hover:bg-[#b5a885] transition-colors px-4 sm:px-6 py-2 sm:py-3 text-black text-xs tracking-wider font-medium">
+            <a
+              href="#hi-im-lisna"
+              className="bg-[#c4b896] hover:bg-[#b5a885] transition-colors px-4 sm:px-6 py-2 sm:py-3 text-black text-xs tracking-wider font-medium inline-block text-center"
+            >
               GO TO PORTFOLIO
-            </button>
+            </a>
           </div>
         </div>
         {/* Photo Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6">
           {portfolioImages.slice(0, 4).map((src, idx) => (
             <div
-              className="relative w-full h-[320px] sm:h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg group"
+              className={`relative w-full h-[320px] sm:h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg group`}
               key={src}
             >
-              <Image
-                src={src}
-                alt={`Lifestyle photo ${idx + 1}`}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-                sizes="100vw"
-                style={{ objectFit: 'cover' }}
-              />
+              {idx === 0 ? (
+                <div style={{ height: '139%', width: '111%', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
+                  <Image
+                    src={src}
+                    alt={`Lifestyle photo ${idx + 1}`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="100vw"
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+              ) : idx === 3 ? (
+                <div style={{ height: '234%', width: '100%', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
+                  <Image
+                    src={src}
+                    alt={`Lifestyle photo ${idx + 1}`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="100vw"
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+              ) : (
+                <Image
+                  src={src}
+                  alt={`Lifestyle photo ${idx + 1}`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="100vw"
+                  style={{ objectFit: 'cover' }}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -323,11 +353,11 @@ export default function Home() {
           <div className="flex flex-col">
             <h3 className="text-2xl md:text-3xl font-serif mb-6 tracking-wider" 
                 style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>
-              AGENCY
+              AVAILABLE FOR
             </h3>
             <div className="space-y-2 text-sm">
-              <p className="font-medium">Available For</p>
-              <p>EMAIL: <a href="mailto:lisnashaji567@gmail.com" className="hover:underline">lisnashaji567@gmail.com</a></p>
+             
+              
               <p className="text-xs text-gray-600 leading-relaxed max-w-md">
                 Fashion / Editorial Shoots<br/>
                 Cultural / Traditional Campaigns<br/>
@@ -344,11 +374,12 @@ export default function Home() {
             </h3>
             <div className="space-y-2 text-sm">
               <p className="font-medium">Lisna Shaji</p>
-              <p>EMAIL: <a href="mailto:lisnashaji567@gmail.com" className="hover:underline">lisnashaji567@gmail.com</a></p>
+              <p>Email: <a href="mailto:lisnashaji567@gmail.com" className="hover:underline">lisnashaji567@gmail.com</a></p>
               <p className="text-xs text-gray-600">
+                Kochi,<br />
                 Kerala, India<br/>
-                English, Malayalam<br/>
-                Petite (hourglass) body type
+                
+                
               </p>
             </div>
           </div>
@@ -378,18 +409,42 @@ export default function Home() {
           </div>
           {/* Socials Column */}
           <div className="flex flex-row gap-2 sm:gap-4 items-center mt-2 sm:mt-4 md:mt-0">
-            <a href="#" className="text-white hover:text-gray-300 transition-colors text-xl">
-              <span>f</span>
+            <a
+              href="https://www.facebook.com/share/1AbkjkPGYU/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-gray-300 transition-colors text-xl"
+            >
+              <span className="sr-only">Facebook</span>
+              <Image
+                src="/portfolio/fblogo.png"
+                alt="Facebook Logo"
+                width={45}
+                height={45}
+                className="inline-block align-middle object-contain w-8 h-8"
+                priority={false}
+              />
             </a>
-            <a href="#" className="text-white hover:text-gray-300 transition-colors text-xl">
-              <span>&#x1F4F7;</span>
+            <a
+              href="https://www.instagram.com/_lis.na_?igsh=OXQ1cHNkNzZjcG9j"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-gray-300 transition-colors text-xl"
+            >
+              <span className="sr-only">Instagram</span>
+              <Image
+                src="/portfolio/insta logo.png"
+                alt="Instagram Logo"
+                width={32}
+                height={32}
+                className="inline-block align-middle object-contain w-8 h-8"
+                priority={false}
+              />
             </a>
-            <a href="#" className="text-white hover:text-gray-300 transition-colors text-xl">
-              <span>&#x1F4CC;</span>
-            </a>
+            {/* Removed pushpin social icon */}
           </div>
         </div>
-        <div className="w-full text-center text-[9px] sm:text-[10px] text-gray-500 mt-2 sm:mt-4">Copyright © 2024 All Rights Reserved</div>
+        <div className="w-full text-center text-[9px] sm:text-[10px] text-gray-500 mt-2 sm:mt-4">Copyright © 2025 Rights Reserved</div>
       </div>
     </footer>
     </div>
