@@ -1,0 +1,17 @@
+# Vercel deployment configuration for Next.js app
+version: 2
+
+builds:
+  - src: package.json
+    use: '@vercel/next'
+
+env:
+  # Add any environment variables here
+  # EXAMPLE_VAR: value
+
+# Optional: Custom build and output settings
+# buildCommand: npm run build
+# outputDirectory: .next
+# installCommand: npm install
+
+defaultRoutes: true
