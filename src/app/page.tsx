@@ -62,30 +62,7 @@ export default function Home() {
 
   // Remove separate scroll event centerIdx tracker (now handled in auto-scroll)
 
-  // Arrow scroll handlers
-  const scrollGallery = (dir: 'left' | 'right') => {
-    const imagesPerSet = portfolioImages.slice(2).length;
-    const middleSet = 1;
-    // Find the current index in the set
-    const idxInSet = centerIdx % imagesPerSet;
-    let newIdxInSet = dir === 'left' ? idxInSet - 1 : idxInSet + 1;
-    if (newIdxInSet < 0) newIdxInSet = imagesPerSet - 1;
-    if (newIdxInSet >= imagesPerSet) newIdxInSet = 0;
-    const newCenterIdx = middleSet * imagesPerSet + newIdxInSet;
-    setCenterIdx(newCenterIdx);
-    setTimeout(() => {
-      const gallery = galleryRef.current;
-      const el = itemRefs.current[newCenterIdx];
-      if (gallery && el) {
-        const galleryRect = gallery.getBoundingClientRect();
-        const elRect = el.getBoundingClientRect();
-        const galleryCenter = galleryRect.left + galleryRect.width / 2;
-        const elCenter = elRect.left + elRect.width / 2;
-        const scrollOffset = elCenter - galleryCenter;
-        gallery.scrollBy({ left: scrollOffset, behavior: 'smooth' });
-      }
-    }, 0);
-  };
+  // ...existing code...
 
   return (
     <div className="min-h-screen w-full bg-black text-white flex flex-col font-sans">
@@ -251,9 +228,9 @@ export default function Home() {
             {/* Header */}
             <div className="mb-4 sm:mb-6 md:mb-8">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-white mb-2 tracking-wider text-center sm:text-left" 
-                  style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>
-                HI, I'M LISNA SHAJI
-              </h2>
+                style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>
+              HI, I&apos;M LISNA SHAJI
+            </h2>
             </div>
             {/* Model Info Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs sm:text-sm text-gray-200">
