@@ -64,6 +64,24 @@ export default function Home() {
 
   // ...existing code...
 
+  // Responsive gallery image size (SSR-safe)
+  const [galleryImgSize, setGalleryImgSize] = useState({ width: 180, height: 260 });
+  useEffect(() => {
+    const updateSize = () => {
+      if (typeof window === 'undefined') return;
+      if (window.innerWidth < 480) {
+        setGalleryImgSize({ width: 110, height: 150 });
+      } else if (window.innerWidth < 770) {
+        setGalleryImgSize({ width: 140, height: 180 });
+      } else {
+        setGalleryImgSize({ width: 180, height: 260 });
+      }
+    };
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
   return (
     <div className="min-h-screen w-full bg-black text-white flex flex-col font-sans">
       {/* TOP: Sidebar and Hero Section */}
@@ -127,8 +145,8 @@ export default function Home() {
                   ref={el => { itemRefs.current[galleryIdx] = el; }}
                   className={`relative rounded-lg overflow-hidden shadow-lg flex-shrink-0 transition-all duration-500 ${isCenter ? 'scale-110 z-20 shadow-2xl border-4 border-[#c4b896]' : 'scale-100 z-10 border-0 opacity-80'}`}
                   style={{
-                    width: window.innerWidth < 480 ? 110 : window.innerWidth < 770 ? 140 : 180,
-                    height: window.innerWidth < 480 ? 150 : window.innerWidth < 770 ? 180 : 260,
+                    width: galleryImgSize.width,
+                    height: galleryImgSize.height,
                     marginTop: 0,
                     marginBottom: 0,
                     boxShadow: isCenter ? '0 8px 32px 0 rgba(196,184,150,0.25)' : undefined,
