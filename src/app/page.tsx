@@ -206,10 +206,10 @@ export default function Home() {
             <br/>
             From the grace of traditional fusion to the fierce flair of Y2K and streetwear, my modeling journey is a canvas of contrasts, confidence, and creativity.<br/>
             <br/>
-            <strong>Winner of WMFO (Bridal Competition)</strong> and <strong>crowned Best Eye Makeup Title Holder</strong>, I don’t just wear the look — I own it. Every shoot is a vibe, every frame tells a story — blending culture, edge, and pure aesthetic energy.<br/>
+            <strong>Winner of WMFO (Bridal Competition)</strong> and <strong>crowned Best Eye Makeup Title Holder</strong>, I don&apos;t just wear the look — I own it. Every shoot is a vibe, every frame tells a story — blending culture, edge, and pure aesthetic energy.<br/>
             <br/>
-            With experience across fashion shoots, editorials, and creative content, I bring poses that speak, styles that slay, and an energy that turns heads — both in photos and videos. Whether it's traditional glam or a streetwear rebellion, I bring it with flair.<br/>
-            Let’s shoot something legendary. 🎥💥
+            With experience across fashion shoots, editorials, and creative content, I bring poses that speak, styles that slay, and an energy that turns heads — both in photos and videos. Whether it&apos;s traditional glam or a streetwear rebellion, I bring it with flair.<br/>
+            Let&apos;s shoot something legendary. 🎥💥
           </p>
           <a href="#bio" className="text-xs text-black underline hover:text-gray-400">Read About My Story &gt;&gt;</a>
         </div>
